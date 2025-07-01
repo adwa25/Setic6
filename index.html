@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sukuna Storee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sukuna Storee</h1>
+        <p class="tagline">Top Up Game Terpercaya - Cibinong</p>
+    </header>
+    <main>
+        <section class="game-list">
+            <h2>Pilih Game</h2>
+            <div class="games">
+                <div class="game-card">Mobile Legends</div>
+                <div class="game-card">Free Fire</div>
+                <div class="game-card">PUBG Mobile</div>
+                <div class="game-card">Higgs Domino</div>
+                <div class="game-card">Genshin Impact</div>
+                <div class="game-card">Valorant</div>
+                <div class="game-card">Call of Duty Mobile</div>
+            </div>
+        </section>
+        <section class="form-section">
+            <h2>Formulir Top Up</h2>
+            <form id="topupForm">
+                <label for="game">Pilih Game:</label>
+                <select id="game" name="game">
+                    <option>Mobile Legends</option>
+                    <option>Free Fire</option>
+                    <option>PUBG Mobile</option>
+                    <option>Higgs Domino</option>
+                    <option>Genshin Impact</option>
+                    <option>Valorant</option>
+                    <option>Call of Duty Mobile</option>
+                </select>
+
+                <label for="userid">User ID + Server:</label>
+                <input type="text" id="userid" name="userid" placeholder="123456789 (1234)">
+
+                <label for="nominal">Pilih Nominal:</label>
+                <select id="nominal" name="nominal">
+                    <option>86 Diamond - Rp20.000</option>
+                    <option>172 Diamond - Rp40.000</option>
+                    <option>257 Diamond - Rp60.000</option>
+                    <option>Weekly Diamond Pass - Rp30.000</option>
+                    <option>Monthly Diamond Pass - Rp90.000</option>
+                </select>
+
+                <label for="payment">Metode Pembayaran:</label>
+                <select id="payment" name="payment">
+                    <option>DANA - +6288267074566</option>
+                </select>
+
+                <button type="submit">Beli Sekarang</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Hubungi Admin via WhatsApp: <a href="https://wa.me/6288267074566" target="_blank">+6288267074566</a></p>
+    </footer>
+    <script>
+        document.getElementById('topupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const game = document.getElementById('game').value;
+            const userid = document.getElementById('userid').value;
+            const nominal = document.getElementById('nominal').value;
+            const message = `Halo admin, saya ingin top up ${game}.
+ID: ${userid}
+Nominal: ${nominal}
+Metode: DANA`;
+
+            const whatsappUrl = `https://wa.me/6288267074566?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
